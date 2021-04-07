@@ -1,8 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 int main()
-{
-	  #ifndef ONLINE_JUDGE 
+{ 
+#ifndef ONLINE_JUDGE 
   
     // For getting input from input.txt file 
     // For getting input from input.txt file 
@@ -12,15 +12,21 @@ int main()
     freopen("output.exe", "w", stdout); 
   
 #endif
-	string a,b,c,s;
-	cin>>a>>b>>c;
-	s=a+b;
-	sort(s.begin(),s.end());
-	sort(c.begin(),c.end());
-	if(s==c)
+	int i,n,m;
+	cin>>n>>m;
+	if(n>m)
 	{
-		cout<<"YES"<<endl;
+		i=m;
+
 	}
 	else
-		cout<<"NO"<<endl;
+		i=n;
+	if(i%2==0)
+	{
+		cout<<"Malvika"<<endl;
+	}
+	else
+	{
+		cout<<"Akshat"<<endl;
+	}
 }

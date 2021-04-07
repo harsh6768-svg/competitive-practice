@@ -2,6 +2,7 @@
 using namespace std;
 int main()
 {
+
 	  #ifndef ONLINE_JUDGE 
   
     // For getting input from input.txt file 
@@ -12,15 +13,20 @@ int main()
     freopen("output.exe", "w", stdout); 
   
 #endif
-	string a,b,c,s;
-	cin>>a>>b>>c;
-	s=a+b;
-	sort(s.begin(),s.end());
-	sort(c.begin(),c.end());
-	if(s==c)
+	int n,l,r;
+	cin>>n>>l;
+	int p[n];
+	for(int i=0;i<n;i++)
 	{
-		cout<<"YES"<<endl;
+		cin>>p[i];
 	}
-	else
-		cout<<"NO"<<endl;
+	sort(p,p+n);
+	r = max(p[0], l - p[n - 1]) * 2;
+	for (int i = 0; i < n - 1; i++)
+        r = max(r, p[i + 1] - p[i]);
+
+    cout.precision(20);
+    cout << fixed << r / 2.0 << endl;
+    return 0;
+
 }
