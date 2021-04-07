@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 #define ll long long
-#define chl_jldi ios_base::sync_with_stdio(false); cin.tie(0)
+
 #define vi vector<int>
 #define v  vector
 #define vll vector<ll>
@@ -12,15 +12,15 @@
 using namespace std;
 
 
-int main(){  chl_jldi;
+int main(){  
 	#ifndef ONLINE_JUDGE 
   
     // For getting input from input.txt file 
     // For getting input from input.txt file 
-    freopen("inputf.in", "r", stdin); 
+    freopen("input.exe", "r", stdin); 
   
     // Printing the Output to output.txt file 
-    freopen("outputf.in", "w", stdout); 
+    freopen("output.exe", "w", stdout); 
   #endif
 
 ll t;
