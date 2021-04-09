@@ -37,7 +37,23 @@ void c_p_p()
 /* ******* Your Functions Below ******** */
 
 
-
+int MaxMoney(vector <int> &nums)
+{
+     int n=nums.size();
+     if(n==0)
+     
+    return 0;
+    if(n==1)
+    	return nums[0];
+    vector <int> dp(n);
+    dp[0]=nums[0];
+    dp[1]=max(nums[1],dp[0]);
+    f(i,2,n)
+    {
+    	dp[i]=max(nums[i]+dp[i-2],dp[i-1]);
+    }
+    return dp[n-1];
+}
 
 
 
@@ -61,9 +77,18 @@ int32_t main()
     // Printing the Output to output.txt file 
     freopen("output.exe", "w", stdout); 
 #endif
+    int n;
+    cin>>n;
+    vector<int> nums;
+    f(index,0,n)
+    {
+    	int value;
+    	cin>>value;
+    	nums.push_back(value);
+    }
+cout<<MaxMoney(nums);
 
-
-
+return 0;
 
 
 }
