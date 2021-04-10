@@ -65,7 +65,7 @@ void merge( int a[], int start, int end){
     }
 
     //Copy elements of temp in a
-    for(int i= start; i<= end; i++){
+   g(i,start,end){
         a[i]= temp[i];
     }
 
@@ -133,7 +133,7 @@ int32_t main()
     mergeSort( a, 0, n-1 );
 
     //Print the sorted array
-    for(int i= 0; i< n; i++){
+    f(i,0,n){
         cout<<a[i]<<" ";
     }
 
