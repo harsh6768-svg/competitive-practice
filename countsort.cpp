@@ -35,7 +35,10 @@ void c_p_p()
 
 }
 /* ******* Your Functions Below ******** */
-
+void CountingSort(int input_array[],int s,int r)
+{
+  
+}
 
 
 
@@ -61,16 +64,23 @@ int32_t main()
     // Printing the Output to output.txt file 
     freopen("output.exe", "w", stdout); 
 #endif
-   int n;
-   cin>>n;
-   int arr[n];
- f(i,0,n)
- {
-    cin>>arr[i];
- }
- f(i,0,n)
- {
-    cout<<arr[i]<<" "<<endl;
- }
- cout<<setbits(15)<<" ";
+  int size=0;
+  int range=10;
+  cin>>size;
+  f(i,0,size)
+  {
+    cin>>myarr[i];
+  }
+  f(i,0,size)
+  {
+    cout<<myarr[i]<<endl;
+  }
+  cout<<endl;
+  CountingSort(arr,size,range);
+
+  f(i,0,size)
+  {
+    cout<<myarr[i]<<endl;
+  }
+  return 0;
 }
