@@ -62,26 +62,9 @@ int32_t main()
     // Printing the Output to output.txt file 
     freopen("output.exe", "w", stdout); 
 #endif
-int t;
-cin>>t;
-while(t--)
-{
-  int n,k;
-  cin>>n>>k;
- set <int> st;
- f(i,0,n)
- {
-  int type;
-  cin>>type;
-  st.insert(type);
- }    
-int cnt=st.size();
-cout<<min(cnt,n-k)<<endl;
-     
-
-      
-    
+int n;
+cin>>n;
+int b=n/2;
+cout<<b<<endl;
+return 0;
 }
-    return 0;
-}
-
