@@ -62,9 +62,19 @@ int32_t main()
     // Printing the Output to output.txt file 
     freopen("output.exe", "w", stdout); 
 #endif
-int n;
-cin>>n;
-int b=n/2;
-cout<<b<<endl;
+
+vector<int>res;
+res.assign(5,10);
+f(i,0,res.size())
+
+  cout<<res[i]<<" ";
+  res.push_back(80);
+   for (int i = 0; i < res.size(); i++)
+        cout << res[i] << " ";
+      res.pop_back();
+       for (int i = 0; i < res.size(); i++)
+        cout << res[i] << " ";
+
+
 return 0;
 }

@@ -73,4 +73,5 @@ int32_t main()
     cout<<arr[i]<<" "<<endl;
  }
  cout<<setbits(15)<<" ";
+ cout<<"mera naaam aksh haiiii"<<endl;
 }
