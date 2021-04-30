@@ -1,19 +1,57 @@
 #include<bits/stdc++.h>
-#define ll long long
-
-#define vi vector<int>
-#define v  vector
-#define vll vector<ll>
-#define pb push_back
-#define mod 1000000007
-#define null NULL
-#define uset unordered_set
-#define umap unordered_map
 using namespace std;
+#define MAX 100005
 
 
-int main(){  
-	#ifndef ONLINE_JUDGE 
+bool prime[MAX];
+int prefix[MAX], suffix[MAX];
+
+
+void precompute(int prefix[], int suffix[])
+{
+	memset(prime, true, sizeof(prime));
+
+	
+	for (int i = 2; i * i < MAX; i++) {
+		if (prime[i]) {
+			for (int j = i * i; j < MAX; j += i)
+				prime[j] = false;
+		}
+	}
+
+	prefix[1] = 1;
+	suffix[MAX - 1] = 1e9 + 7;
+
+
+	for (int i = 2; i < MAX; i++) {
+		if (prime[i])
+			prefix[i] = i;
+		else
+			prefix[i] = prefix[i - 1];
+	}
+
+	
+	for (int i = MAX - 1; i > 1; i--) {
+		if (prime[i])
+			suffix[i] = i;
+		else
+			suffix[i] = suffix[i + 1];
+	}
+}
+
+
+int query(int prefix[], int suffix[], int L, int R)
+{
+	if (prefix[R] < L || suffix[L] > R)
+		return -1;
+	else
+		return prefix[R] - suffix[L];
+}
+
+// Driven Program
+int main()
+{
+	  #ifndef ONLINE_JUDGE 
   
     // For getting input from input.txt file 
     // For getting input from input.txt file 
@@ -21,30 +59,27 @@ int main(){
   
     // Printing the Output to output.txt file 
     freopen("output.exe", "w", stdout); 
-  #endif
-
-ll t;
-cin>>t;
-while(t--){
-
-int n;
-cin>>n;
-int cnt[3002]={0};
-int temp;
-for(int i=0;i<n;i++){
-	cin>>temp;
-	cnt[temp]++;
-}
-unordered_set<int> c1;
-int c2=0;
-for(int i=1;i<3002;i++){
-	if(cnt[i]){
-		c2++;
-		c1.insert(cnt[i]);
+  
+#endif
+	int q ;
+	cin>>q;
+	int L[q],R[q];
+	for(int i=0;i<q;i++)
+	{
+		cin>>L[i]>>R[i];
 	}
+	
+
+	precompute(prefix, suffix);
+
+	for (int i = 0; i < q; i++)
+		cout << query(prefix, suffix, L[i], R[i]) << endl;
+
+	return 0;
 }
-if(c1.size()==c2) cout<<"Yes\n";
-else cout<<"No\n";
 
 
-}return 0;}
+
+
+
+
