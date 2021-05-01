@@ -21,6 +21,7 @@
 #define mk(arr,n,type)  type *arr=new type[n]
 #define w(x)            int x; cin >> x; while(x--)
 #define f(i,x,y)        for(int i = x; i < y; i++)
+#define g(i,x,y)        for(int i=x; i<=y ; i++)
 
 
 
@@ -62,49 +63,26 @@ int32_t main()
     // Printing the Output to output.txt file 
     freopen("output.exe", "w", stdout); 
 #endif
-  
-    int t;
-    cin>>t;
-    while(t--)
-    {
-        int n;
-        string str;
-        int ones=0;
-        int zeros=0;
-        cin>>n>>str;
-        int f=0;
-        for(int i=0;i<n;i++)
-        {
-            if(str[i]=='0')
-            {
-                zeros++;
-            }
-            else
-            {
-                ones++;
-            }
-            if(ones>=zeros)
-            {
-                f=1;
-                break;
-            }
-        }
-        if(f==0)
-        {
-            cout<<"NO"<<endl;
-        }
-        else
-        {
-            cout<<"YES"<<endl;
-        }
-    }
-    
+ int n;
+ cin>>n;
+ int arr[10000];
+ f(i,0,n)
+ {
+  cin>>arr[i];
+ }
+ int ele;
+ cin>>ele;
+ 
+ for(int i=n;i>=1;i--)
+ {
+  arr[i]=arr[i-1];
+ }
+ arr[0]=ele;
+ for(int i=0;i<=n;i++)
+ {
+  cout<<arr[i]<<" ";
+ }
+
   // your code goes here
   return 0;
 }
-
-
-
-
-
-

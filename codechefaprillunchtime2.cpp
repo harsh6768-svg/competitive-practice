@@ -62,49 +62,22 @@ int32_t main()
     // Printing the Output to output.txt file 
     freopen("output.exe", "w", stdout); 
 #endif
-  
-    int t;
-    cin>>t;
-    while(t--)
+  int n;
+  cin>>n;
+  int temp;
+  map<int,int>w;
+  f(i,0,n)
+  {
+    cin>>temp;
+    w[temp]++;
+  }
+  for(auto it=w.begin();it!=w.end();it++)
+  {
+    if(it->second>1)
     {
-        int n;
-        string str;
-        int ones=0;
-        int zeros=0;
-        cin>>n>>str;
-        int f=0;
-        for(int i=0;i<n;i++)
-        {
-            if(str[i]=='0')
-            {
-                zeros++;
-            }
-            else
-            {
-                ones++;
-            }
-            if(ones>=zeros)
-            {
-                f=1;
-                break;
-            }
-        }
-        if(f==0)
-        {
-            cout<<"NO"<<endl;
-        }
-        else
-        {
-            cout<<"YES"<<endl;
-        }
+        cout<<it->first<<endl;
     }
-    
+  }
   // your code goes here
   return 0;
 }
-
-
-
-
-
-
