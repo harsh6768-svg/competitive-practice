@@ -37,7 +37,15 @@ void c_p_p()
 /* ********************* Your Functions Below ********************** */
 
 
-
+bool isperfectsquare(long double x)
+{
+  if(x>=0)
+  {
+    long long sr=sqrt(x);
+    return(sr*sr==x);
+  }
+  return false;
+}
 
 
 
@@ -63,25 +71,38 @@ int32_t main()
     // Printing the Output to output.txt file 
     freopen("output.exe", "w", stdout); 
 #endif
- int n;
- cin>>n;
- int arr[10000];
- f(i,0,n)
- {
-  cin>>arr[i];
- }
- int ele;
- cin>>ele;
- 
- for(int i=n;i>=1;i--)
- {
-  arr[i]=arr[i-1];
- }
- arr[0]=ele;
- for(int i=0;i<=n;i++)
- {
-  cout<<arr[i]<<" ";
- }
+int t;
+cin>>t;
+while(t--)
+{
+  int n;
+  cin>>n;
+  if(n%2!=0)
+  {
+    cout<<"No"<<endl;
+    continue;
+  }
+  int z=n/2;
+  if(isperfectsquare(z))
+  {
+    cout<<"Yes"<<endl;
+    continue;
+  }
+  if(n%4!=0)
+  {
+    cout<<"No"<<endl;
+    continue;
+
+  }
+   z=n/4;
+  if(isperfectsquare(z))
+  {
+    cout<<"Yes"<<endl;
+    continue;
+  }
+  cout<<"No"<<endl;
+
+}
 
   // your code goes here
   return 0;
