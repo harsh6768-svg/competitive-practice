@@ -47,7 +47,6 @@ void c_p_p()
 
 
 
-
 /* ******* Your Functions Above ******** */
 
 int32_t main()
@@ -61,6 +60,42 @@ int32_t main()
     // Printing the Output to output.txt file 
     freopen("output.exe", "w", stdout); 
 #endif
+    int t;
+    cin>>t;
+    string s;
+    unordered_map<char,int>um;
+    while(t--)
+    {
+        int n;
+        cin>>n;
+        cin>>s;
+        int flag=1;
+        f(i,0,n)
+        {
+            um[s[i]]++;
+            if(um[s[i]]>1 && s[i]!=s[i-1])
+            {
+                flag=0;
+                break;
+            }
+
+        }
+    if(flag)
+    {
+        cout<<"Yes"<<endl;
+    }
+    else
+    {
+        cout<<"No"<<endl;
+    }
+        
+        
+    
+     
+    
+
+
+    }
 
 
 
